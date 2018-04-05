@@ -17,8 +17,13 @@ Javascript library to manipulate SVG Path
 
 ```javascript
 var pathElem = document.getElementById("path"); //get the path element
-
 var SVGRoadInstance = new SVGRoad(pathElem);
+```
+
+## Get the Path Length
+
+```javascript
+SVGRoadInstance.getPathLength();
 ```
 
 ## Set `stroke-dasharray` in %

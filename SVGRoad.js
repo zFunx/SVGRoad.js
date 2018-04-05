@@ -1,19 +1,25 @@
 function SVGRoad(elem) {
-  this.pathLength = elem.getTotalLength();
-  this.pathLengthPer100 = this.pathLength / 100;
+  var 
+    pathLength = elem.getTotalLength(),
+    pathLengthPer100 = pathLength / 100;
+
   this.update = function() {
-    this.pathLength = elem.getTotalLength();
+    pathLength = elem.getTotalLength();
+  };
+
+  this.getPathLength = function() {
+    return pathLength;
   };
 
   this.setStrokeDasharrayInPercent = function() {
     var strokeDasharray = "";
     for (i = 0; i < arguments.length; i++) {
-      strokeDasharray += arguments[i] * this.pathLengthPer100 + " ";
+      strokeDasharray += arguments[i] * pathLengthPer100 + " ";
     }
     elem.style.strokeDasharray = strokeDasharray;
   };
 
   this.setStrokeDashoffsetInPercent = function(strokeDashoffset) {
-    elem.style.strokeDashoffset = strokeDashoffset * this.pathLengthPer100;
+    elem.style.strokeDashoffset = strokeDashoffset * pathLengthPer100;
   };
 }
