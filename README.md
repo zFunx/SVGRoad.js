@@ -1,4 +1,4 @@
-# SVGRoad
+# SVGRoad Ver 1.1
 
 Javascript library to manipulate SVG Path
 
