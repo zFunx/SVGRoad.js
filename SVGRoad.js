@@ -1,14 +1,25 @@
 function SVGRoad(elem) {
-  var 
-    pathLength = elem.getTotalLength(),
-    pathLengthPer100 = pathLength / 100;
+  var pathLength = elem.getTotalLength(),
+    pathLengthPer100 = pathLength / 100,
+    strokeDashoffsetInPercent = 0;
 
   this.update = function() {
     pathLength = elem.getTotalLength();
+    pathLengthPer100 = pathLength / 100;
+    strokeDashoffsetInPercent =
+      parseFloat(elem.style.strokeDashoffset) / pathLengthPer100;
   };
 
   this.getPathLength = function() {
     return pathLength;
+  };
+
+  this.getStrokeDashoffsetInPercent = function() {
+    return strokeDashoffsetInPercent;
+  };
+
+  this.getStrokeDashoffsetInPx = function() {
+    return strokeDashoffsetInPercent * pathLengthPer100;
   };
 
   this.setStrokeDasharrayInPercent = function() {
@@ -19,7 +30,8 @@ function SVGRoad(elem) {
     elem.style.strokeDasharray = strokeDasharray;
   };
 
-  this.setStrokeDashoffsetInPercent = function(strokeDashoffset) {
-    elem.style.strokeDashoffset = strokeDashoffset * pathLengthPer100;
+  this.setStrokeDashoffsetInPercent = function(x) {
+    elem.style.strokeDashoffset = x * pathLengthPer100;
+    strokeDashoffsetInPercent = x;
   };
 }
