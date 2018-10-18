@@ -14,6 +14,9 @@ h1,h2{
     display: inline-block;
     margin: 4px 0;
     font-size: large;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .inline-code{
