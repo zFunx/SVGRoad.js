@@ -1,0 +1,25 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 32px;
+}
+
+h1,h2{
+    margin: 16px 0 8px;
+}
+
+.code{
+    background: #e7e7e7;
+    padding: 16px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 4px 0;
+    font-size: large;
+}
+
+.inline-code{
+    background: #e7e7e7;
+    padding: 0 4px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 4px 0;
+}

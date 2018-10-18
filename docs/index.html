@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/range.css">
+    <link rel="stylesheet" href="CSS/input.css">
+    <script src="JS/w3codecolor.js"></script>
+    <script src="JS/SVGRoad.js"></script>
 </head>
+
 <body>
-    Testing
+    <h1>SVGRoad Ver 1.1</h1>
+    Javascript library to manipulate SVG Path
+    <hr>
+
+    <h2>Features</h2>
+    <ul>
+        <li>Set <span class="w3-code htmlHigh inline-code">stroke-dasharray</span> in %</li>
+        <li>Set <span class="w3-code htmlHigh inline-code">stroke-dashoffset</span> in %</li>
+    </ul>
+    <hr>
+
+    <h2>Setup</h2>
+    <pre class="w3-code htmlHigh code">&#x3C;script src=&#x22;SVGRoad.js&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
+    <hr>
+
+    <h2>Initialize the Path</h2>
+    <pre class="w3-code jsHigh code">var pathElem = document.getElementById("path"); /*get the path element*/
+var SVGRoadInstance = new SVGRoad(pathElem);</pre>
+    <hr>
+
+    <h2>Get the Path Length</h2>
+    <pre class="w3-code jsHigh code">SVGRoadInstance.getPathLength();</pre>
+    <hr>
+
+    <h2>Set <span class="w3-code htmlHigh inline-code">stroke-dashoffset</span> in %</h2>
+    <pre class="w3-code jsHigh code" id="strokeDashoffsetCode">SVGRoadInstance.setStrokeDashoffsetInPercent(40);</pre>
+    <br>
+    <div class="horizontally-stacked-slider">
+        <div class="title">
+            <span class="w3-code htmlHigh inline-code">stroke-dashoffset</span> :
+        </div>
+        <input type="range" value="40" min="0" max="100" oninput="changeStrokeDashoffset(this)">
+    </div>
+    <svg width="80vw" viewbox="-5 0 50 20" fill="none" style="display:block; margin:auto">
+        <!--background-path-->
+        <path stroke="#ccc" d="m0,10 q10,10 20,0 t20,0" />
+
+        <!--foreground-path-->
+        <path stroke-width="2" stroke="LimeGreen" id="pathStrokeDashoffset" d="m0,10 q10,10 20,0 t20,0" />
+    </svg>
+    <hr>
+
+    <h2>Get <span class="w3-code htmlHigh inline-code">stroke-dashoffset</span> in %</h2>
+    <pre class="w3-code jsHigh code" id="strokeDashoffsetCode">SVGRoadInstance.getStrokeDashoffsetInPercent();</pre>
+    <hr>
+
+    <h2>Set <span class="w3-code htmlHigh inline-code">stroke-dasharray</span> in %</h2>
+    <pre class="w3-code jsHigh code">SVGRoadInstance.setStrokeDasharrayInPercent(50);</pre>
+    <br>
+    <pre class="w3-code jsHigh code">SVGRoadInstance.setStrokeDasharrayInPercent(50, 10);</pre>
+    <br>
+    <pre class="w3-code jsHigh code">SVGRoadInstance.setStrokeDasharrayInPercent(50,5,10,5,...);//multiple arguments</pre>
+    <br>
+    <pre class="w3-code jsHigh code" id="strokeDasharrayCode">SVGRoadInstance.setStrokeDasharrayInPercent(40, 5, 10, 5);</pre>
+    <br>
+    <div style="display:flex;align-items:center;justify-content:center">
+        <span class="w3-code htmlHigh inline-code">stroke-dashoffset</span> : 
+        <input type="text" value="40, 5, 10, 5" style="margin-left:8px" oninput="changeStrokeDasharray(this)">
+    </div>
+    <svg width="80vw" viewbox="-5 0 50 20" fill="none" style="display:block; margin:auto">
+        <!--background-path-->
+        <path stroke="#ccc" d="m0,10 q10,10 20,0 t20,0" />
+
+        <!--foreground-path-->
+        <path stroke-width="2" stroke="LimeGreen" id="pathStrokeDasharray" d="m0,10 q10,10 20,0 t20,0" />
+    </svg>
+    <script>
+        w3CodeColor();
+
+        var pathElemStrokeDashoffset = document.getElementById("pathStrokeDashoffset");
+        var SVGRoadStrokeDashoffset = new SVGRoad(pathElemStrokeDashoffset);
+        SVGRoadStrokeDashoffset.setStrokeDasharrayInPercent(40, 5, 10, 5);
+        SVGRoadStrokeDashoffset.setStrokeDashoffsetInPercent(40);
+
+        var pathElemStrokeDasharray = document.getElementById("pathStrokeDasharray");
+        var SVGRoadStrokeDasharray = new SVGRoad(pathElemStrokeDasharray);
+        SVGRoadStrokeDasharray.setStrokeDasharrayInPercent(40, 5, 10, 5);
+        SVGRoadStrokeDasharray.setStrokeDashoffsetInPercent(40);
+
+        function changeStrokeDashoffset(x) {
+            var strokeDashoffsetCode = document.getElementById("strokeDashoffsetCode");
+            strokeDashoffsetCode.innerText = "SVGRoadInstance.setStrokeDashoffsetInPercent(" + x.value + ");";
+            w3CodeColor(strokeDashoffsetCode, "js");
+            SVGRoadStrokeDashoffset.setStrokeDashoffsetInPercent(x.value);
+        }
+
+        function changeStrokeDasharray(x) {
+            var argsString = x.value.split(",");
+            var strokeDasharrayCode = document.getElementById("strokeDasharrayCode");
+            strokeDasharrayCode.innerText = "SVGRoadInstance.setStrokeDasharrayInPercent(" + argsString +");";
+            SVGRoadStrokeDasharray.setStrokeDasharrayInPercent.apply(null, argsString);
+            w3CodeColor(strokeDasharrayCode, "js");
+        }
+    </script>
 </body>
+
 </html>
