@@ -7,4 +7,4 @@ Javascript library to manipulate SVG Path
 * Set `stroke-dasharray` in %
 * Set `stroke-dashoffset` in %
 
-[Demo and documentation](../blob/master/LICENSE "Demo and documentation")
+[Demo and documentation](https://zfunx.github.io/SVGRoad.js/ "Demo and documentation")
