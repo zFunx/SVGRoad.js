@@ -12,7 +12,7 @@ function w3CodeColor() {
   }
   k = modes.length;
   if (arguments[0]) {
-    console.log("hello");
+    //console.log("hello");
     arguments[0].innerHTML = w3CodeColorize(arguments[0].innerHTML, arguments[1]);
   } else {
     for (j = 0; j < k; j++) {

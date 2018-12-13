@@ -4,8 +4,8 @@
     trackColor = #ccc,
     activeTrackColor = #777,
     trackHeight = 4px,
-    thumbColor = red,
-    activeThumbColor = darkOrange
+    thumbColor = #777,
+    activeThumbColor = limeGreen
   */
 
 input[type="range"] {
@@ -34,7 +34,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: red; /*thumbColor*/
+  background: #777; /*thumbColor*/
   width: 28px; /* thumbHeight + (2 x thumbBorderWidth)*/
   height: 28px; /* thumbHeight + (2 x thumbBorderWidth)*/
   border-radius: 50%;
@@ -46,7 +46,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 input[type="range"]:hover::-webkit-slider-thumb,
 input[type="range"]:focus::-webkit-slider-thumb {
-  background: darkOrange; /*activeThumbColor*/
+  background: limeGreen; /*activeThumbColor*/
 }
 
 /*firefox*/
@@ -67,7 +67,7 @@ input[type="range"]:focus::-moz-range-track {
 }
 
 input[type="range"]::-moz-range-thumb {
-  background: red; /*thumbColor*/
+  background: #777; /*thumbColor*/
   width: 20px; /*thumbHeight*/
   height: 20px; /*thumbHeight*/
   border-radius: 50%;
@@ -77,18 +77,18 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="range"]:hover::-moz-range-thumb,
 input[type="range"]:focus::-moz-range-thumb {
-  background: darkOrange; /*activeThumbColor*/
+  background: limeGreen; /*activeThumbColor*/
 }
 
 input[type="range"]::-moz-range-progress {
-  background: red; /*thumbColor*/
+  background: #777; /*thumbColor*/
   border-radius: 4px; /*trackHeight*/
   height: 4px; /*trackHeight*/
 }
 
 input[type="range"]:hover::-moz-range-progress,
 input[type="range"]:focus::-moz-range-progress {
-  background: darkOrange; /*activeThumbColor*/
+  background: limeGreen; /*activeThumbColor*/
 }
 
 /*edge and IE*/
@@ -106,7 +106,7 @@ input[type="range"]:focus::-ms-track {
 }
 
 input[type="range"]::-ms-thumb {
-  background: red; /*thumbColor*/
+  background: #777; /*thumbColor*/
   width: 20px; /*thumbHeight*/
   height: 20px; /*thumbHeight*/
   border-radius: 50%;
@@ -118,7 +118,7 @@ input[type="range"]::-ms-thumb {
 
 input[type="range"]:hover::-ms-thumb,
 input[type="range"]:focus::-ms-thumb {
-  background: darkOrange; /*activeThumbColor*/
+  background: limeGreen; /*activeThumbColor*/
 }
 
 input[type="range"]::-ms-tooltip {
@@ -126,13 +126,13 @@ input[type="range"]::-ms-tooltip {
 }
 
 input[type="range"]::-ms-fill-lower {
-  background: red; /*thumbColor*/
+  background: #777; /*thumbColor*/
   border-radius: 4px; /*trackHeight*/
 }
 
 input[type="range"]:hover::-ms-fill-lower,
 input[type="range"]:focus::-ms-fill-lower {
-  background: darkOrange; /*activeThumbColor*/
+  background: limeGreen; /*activeThumbColor*/
 }
 
 .vertically-stacked-slider {
@@ -149,7 +149,7 @@ input[type="range"]:focus::-ms-fill-lower {
 }
 
 .horizontally-stacked-slider > .title {
-  padding: 8px;
+  padding: 8px 0;
 }
 
 .horizontally-stacked-slider > input[type="range"] {

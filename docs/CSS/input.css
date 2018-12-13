@@ -9,6 +9,6 @@ input[type=text]{
   }
   
   input[type=text]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
+    border-color:limegreen;
+    box-shadow:0 0 8px 0 limegreen;
   }
